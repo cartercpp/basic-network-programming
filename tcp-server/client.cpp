@@ -84,7 +84,7 @@ int main()
 				index += bytesSent;
 		}
 
-		// receive data from client:
+		// receive data from server:
 		std::string buffer(bufferSize, '\0');
 		const int bytesReceived = recv(clientSocket, buffer.data(), bufferSize, 0);
 
