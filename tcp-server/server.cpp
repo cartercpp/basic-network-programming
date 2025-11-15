@@ -64,6 +64,8 @@ int main()
 			serverAddress->ai_addr,
 			serverAddress->ai_addrlen
 		) == 0;
+		if (!bindSuccess)
+			throw std::runtime_error{ "Failed to bind server socket to server ip address" };
 
 		// listen for incoming connections:
 		const bool listenSuccess = listen(serverSocket, SOMAXCONN) == 0;
